@@ -2,6 +2,8 @@
 import {deleteTodo, toggleComplete, editTodo} from '../../store/TodoStore'
 import bin from '$lib/assets/delete.png'
 export let todo:any;
+console.log('input',todo);
+console.log(todo)
 
 $: completeClass = todo.complete ? 'bg-green-three' : 'bg-leaf-one'
 </script>

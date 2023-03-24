@@ -1,6 +1,7 @@
 <script>
-  import {addTodo} from '../../store/TodoStore'
   import add from '$lib/assets/add.png'
+  import { addTodo } from '../../store/TodoStore'
+
 </script>
 
 <section class="flex justify-between">

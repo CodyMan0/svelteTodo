@@ -3,8 +3,9 @@ import { writable } from "svelte/store";
 import { browser } from "$app/environment";
 
 const data = browser
-	? JSON.parse(window.localStorage.getItem("string") || "")
-	: [];
+	? JSON.parse(window.localStorage.getItem("string") || "") ?? []
+	: //null일 경우에 빈 배열을 넣어주는 코드
+	  [];
 
 export const todos = writable(data);
 
@@ -17,18 +18,17 @@ todos.subscribe((value) => {
 
 export const addTodo = () => {
 	todos.update((currentTodos) => {
-		console.log(currentTodos);
 		return [...currentTodos, { id: uuidv4(), text: "", complete: false }];
 	});
 };
 
-export const deleteTodo = (id: string) => {
+export const deleteTodo = (id: any) => {
 	todos.update((currentTodos) => {
 		return currentTodos.filter((todo: any) => todo.id !== id);
 	});
 };
 
-export const toggleComplete = (id: string) => {
+export const toggleComplete = (id: any) => {
 	todos.update((currentTodos) => {
 		return currentTodos.map((todo: any) => {
 			if (todo.id === id) {

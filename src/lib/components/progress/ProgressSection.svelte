@@ -1,6 +1,5 @@
 <script lang="ts">
 import ProgressBar from "./ProgressBar.svelte";
-
 import {todos} from '../../store/TodoStore'
 
 export let completePercentage = 0;
