@@ -1,38 +1,22 @@
-# create-svelte
+# 투두리스트 using svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+베포 링크 : https://svelte-todo-alpha.vercel.app/
 
-## Creating a project
+## 프로젝트 시작
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
+```
+npm i // module 설치
+npm run dev //로컬 프로젝트 시작
 ```
 
-## Developing
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## 알게 된 것
 
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+1. react의 map 매소드를 svelte에선 
 ```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
+{#each $todos as todo (todo.id)} // as todo는 map매소드의 매개변수와 같고 todo.id는 key값을 넘기는 것과 같다.
+{/each}
 ```
+로 작성할 수 있다.
 
-You can preview the production build with `npm run preview`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
