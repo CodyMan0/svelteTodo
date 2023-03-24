@@ -3,7 +3,7 @@ import { writable } from "svelte/store";
 import { browser } from "$app/environment";
 
 const data = browser
-	? JSON.parse(window.localStorage.getItem("string") || "") ?? []
+	? JSON.parse(window.localStorage.getItem("string")) ?? []
 	: //null일 경우에 빈 배열을 넣어주는 코드
 	  [];
 
